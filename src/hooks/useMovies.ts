@@ -7,10 +7,14 @@ interface MoviePoster {
   original: string;
 }
 
+interface Rating {
+  average: number;
+}
 export interface Movie {
   id: number;
   name: string;
   image: MoviePoster;
+  rating: Rating;
 }
 
 interface FetchMovieResponse {
