@@ -16,7 +16,8 @@ const MovieGrid = () => {
       gap={10}
       padding={10}
     >
-      {movies && movies.map((movie) => <MovieCard movie={movie} />)}
+      {movies &&
+        movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
     </SimpleGrid>
   );
 };
