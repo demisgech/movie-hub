@@ -9,17 +9,13 @@ function App() {
         md: `"nav nav" "sidebar main"`,
       }}
     >
-      <GridItem area="nav" bg="black">
+      <GridItem area="nav">
         <Navbar />
       </GridItem>
       <Show above="md">
-        <GridItem area="sidebar" bg="blue">
-          Sidebar
-        </GridItem>
+        <GridItem area="sidebar">Sidebar</GridItem>
       </Show>
-      <GridItem area="main" bg="orange">
-        Main
-      </GridItem>
+      <GridItem area="main">Main</GridItem>
     </Grid>
   );
 }
