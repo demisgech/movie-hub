@@ -1,13 +1,14 @@
-import { Card, SimpleGrid, Image, CardBody, Text } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
+import MovieCard from "./MovieCard";
 
 interface MoviePoster {
   medium: string;
   original: string;
 }
 
-interface Movie {
+export interface Movie {
   id: number;
   name: string;
   image: MoviePoster;
@@ -45,15 +46,7 @@ const MovieGrid = () => {
       gap={5}
       padding={10}
     >
-      {movies &&
-        movies.map((movie) => (
-          <Card key={movie.id}>
-            <Image src={movie.image.original} />
-            <CardBody>
-              <Text>{movie.name}</Text>
-            </CardBody>
-          </Card>
-        ))}
+      {movies && movies.map((movie) => <MovieCard movie={movie} />)}
     </SimpleGrid>
   );
 };
