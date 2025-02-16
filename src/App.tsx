@@ -9,6 +9,10 @@ function App() {
         base: `"nav" "main"`,
         md: `"nav nav" "sidebar main"`,
       }}
+      templateColumns={{
+        base: "1fr",
+        md: "200px 1fr",
+      }}
     >
       <GridItem area="nav">
         <Navbar />
