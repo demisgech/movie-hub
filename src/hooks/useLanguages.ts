@@ -1,9 +1,6 @@
 import { getLanguages } from "../data/languages";
+import useFilterList from "./useFilterList";
 
-const useLanguages = () => ({
-  languages: getLanguages(),
-  error: null,
-  isLoading: false,
-});
+const useLanguages = () => useFilterList(getLanguages());
 
 export default useLanguages;

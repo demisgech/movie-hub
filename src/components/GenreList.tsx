@@ -3,7 +3,7 @@ import useGenres from "../hooks/useGenres";
 import { BsChevronDown } from "react-icons/bs";
 
 const GenreList = () => {
-  const { genres, error } = useGenres();
+  const { data: genres, error } = useGenres();
   if (error) return null;
   return (
     <>
@@ -12,9 +12,10 @@ const GenreList = () => {
           Genres:{" "}
         </MenuButton>
         <MenuList>
-          {genres.map((genre, index) => (
-            <MenuItem key={index}>{genre}</MenuItem>
-          ))}
+          {genres &&
+            genres.map((genre, index) => (
+              <MenuItem key={index}>{genre}</MenuItem>
+            ))}
         </MenuList>
       </Menu>
     </>

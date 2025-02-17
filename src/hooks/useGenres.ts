@@ -1,9 +1,6 @@
 import { getGenres } from "../data/genres";
+import useFilterList from "./useFilterList";
 
-const useGenres = () => ({
-  genres: getGenres(),
-  isLoading: false,
-  error: null,
-});
+const useGenres = () => useFilterList(getGenres());
 
 export default useGenres;

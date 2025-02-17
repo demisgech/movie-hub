@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs";
 import useLanguages from "../hooks/useLanguages";
 
 const LanguagesList = () => {
-  const { languages, error } = useLanguages();
+  const { data: languages, error } = useLanguages();
 
   if (error) return null;
   return (
@@ -12,9 +12,10 @@ const LanguagesList = () => {
         Languages:{" "}
       </MenuButton>
       <MenuList>
-        {languages.map((genre, index) => (
-          <MenuItem key={index}>{genre}</MenuItem>
-        ))}
+        {languages &&
+          languages.map((genre, index) => (
+            <MenuItem key={index}>{genre}</MenuItem>
+          ))}
       </MenuList>
     </Menu>
   );
