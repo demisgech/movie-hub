@@ -5,6 +5,7 @@ import GenreList from "./components/GenreList";
 import LanguagesList from "./components/LanguageList";
 import CountryLIst from "./components/CountryLIst";
 import NetworkList from "./components/NetworkList";
+import WebChannel from "./components/WebChannel";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <GenreList />
             <CountryLIst />
             <NetworkList />
+            <WebChannel />
           </VStack>
         </GridItem>
       </Show>
