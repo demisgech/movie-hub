@@ -2,6 +2,7 @@ import { Grid, GridItem, Show, VStack } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
 import GenreList from "./components/GenreList";
+import LanguagesList from "./components/LanguageList";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Show above="lg">
         <GridItem area="sidebar">
           <VStack>
+            <LanguagesList />
             <GenreList />
           </VStack>
         </GridItem>
