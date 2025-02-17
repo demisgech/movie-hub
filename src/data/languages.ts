@@ -1,0 +1,35 @@
+const languages = [
+  "English",
+  "Japanese",
+  "Korean",
+  "French",
+  "Spanish",
+  "German",
+  "Italian",
+  "Portuguese",
+  "Dutch",
+  "Swedish",
+  "Danish",
+  "Norwegian",
+  "Finnish",
+  "Polish",
+  "Turkish",
+  "Russian",
+  "Hungarian",
+  "Czech",
+  "Greek",
+  "Hebrew",
+  "Arabic",
+  "Hindi",
+  "Bengali",
+  "Mandarin",
+  "Cantonese",
+  "Thai",
+  "Filipino",
+  "Indonesian",
+  "Malay",
+];
+
+export function getLanguages() {
+  return languages;
+}

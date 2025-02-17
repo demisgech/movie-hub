@@ -1,4 +1,4 @@
-import { Card, CardBody, HStack, Image, Text } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Image, Link, Text } from "@chakra-ui/react";
 import { Movie } from "../hooks/useMovies";
 import Like from "./Like";
 import SimpleStar from "./stars/SimpleStar";
@@ -16,7 +16,7 @@ const MovieCard = ({ movie }: Props) => {
     <Card borderRadius={10} overflow="hidden">
       <Image src={movie.image.medium} objectFit="cover" />
       <CardBody>
-        <Text fontSize="2xl">{movie.name}</Text>
+        <Link fontSize="2xl">{movie.name}</Link>
         <HStack marginTop={2} justifyContent="space-between">
           <Like onClick={handleLikeClick} />
           <HStack>

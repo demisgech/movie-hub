@@ -1,0 +1,31 @@
+const genres = [
+  "Action",
+  "Adventure",
+  "Anime",
+  "Children",
+  "Comedy",
+  "Crime",
+  "Documentary",
+  "Drama",
+  "Family",
+  "Fantasy",
+  "Food",
+  "History",
+  "Horror",
+  "Legal",
+  "Medical",
+  "Music",
+  "Mystery",
+  "Nature",
+  "Romance",
+  "Science-Fiction",
+  "Sports",
+  "Supernatural",
+  "Thriller",
+  "Travel",
+  "War",
+  "Western",
+];
+export function getGenres() {
+  return genres;
+}
