@@ -2,6 +2,7 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
 import Sidebar from "./components/Sidebar";
+import SortOption from "./components/SortOption";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <SortOption />
         <MovieGrid />
       </GridItem>
     </Grid>
