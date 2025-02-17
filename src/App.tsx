@@ -4,6 +4,7 @@ import MovieGrid from "./components/MovieGrid";
 import GenreList from "./components/GenreList";
 import LanguagesList from "./components/LanguageList";
 import CountryLIst from "./components/CountryLIst";
+import NetworkList from "./components/NetworkList";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <LanguagesList />
             <GenreList />
             <CountryLIst />
+            <NetworkList />
           </VStack>
         </GridItem>
       </Show>

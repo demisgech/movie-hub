@@ -1,6 +1,6 @@
 import { getNetworks } from "../data/networks";
 import useFilterList from "./useFilterList";
 
-const useNetworks = () => useFilterList(getNetworks());
+const useNetworkList = () => useFilterList(getNetworks());
 
-export default useNetworks;
+export default useNetworkList;
