@@ -1,11 +1,7 @@
-import { Grid, GridItem, Show, VStack } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
-import GenreList from "./components/GenreList";
-import LanguagesList from "./components/LanguageList";
-import CountryLIst from "./components/CountryLIst";
-import NetworkList from "./components/NetworkList";
-import WebChannel from "./components/WebChannel";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
@@ -24,13 +20,7 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="sidebar">
-          <VStack>
-            <LanguagesList />
-            <GenreList />
-            <CountryLIst />
-            <NetworkList />
-            <WebChannel />
-          </VStack>
+          <Sidebar />
         </GridItem>
       </Show>
       <GridItem area="main">
