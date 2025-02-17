@@ -1,5 +1,5 @@
 function useFilterList(
-  data: string[] | null,
+  data: string[] | number[] | null,
   error?: string | null,
   isLoading?: boolean | false
 ) {
