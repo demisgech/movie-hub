@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
 import GenreList from "./components/GenreList";
 import LanguagesList from "./components/LanguageList";
+import CountryLIst from "./components/CountryLIst";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <VStack>
             <LanguagesList />
             <GenreList />
+            <CountryLIst />
           </VStack>
         </GridItem>
       </Show>
