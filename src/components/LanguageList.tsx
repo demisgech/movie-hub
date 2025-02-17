@@ -1,12 +1,12 @@
 import useLanguages from "../hooks/useLanguages";
-import DropdownList from "./DropdownList";
+import ExpandableList from "./ExpandableList";
 
 const LanguagesList = () => {
   const { data: languages, error } = useLanguages();
 
   if (error) return null;
   return (
-    <>{languages && <DropdownList children="Languages" data={languages} />}</>
+    <>{languages && <ExpandableList children="Languages" data={languages} />}</>
   );
 };
 

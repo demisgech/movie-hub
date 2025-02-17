@@ -9,9 +9,9 @@ const Sidebar = () => {
   return (
     <>
       <Stack paddingX={3} paddingTop={3}>
-        <LanguagesList />
         <GenreList />
         <CountryLIst />
+        <LanguagesList />
         <NetworkList />
         <WebChannel />
       </Stack>
