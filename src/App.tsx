@@ -4,6 +4,8 @@ import MovieGrid from "./components/MovieGrid";
 import Sidebar from "./components/Sidebar";
 import SortOption from "./components/SortOption";
 import RatingOption from "./components/RatingOption";
+import PremieredSince from "./components/PremieredSince";
+import PremieredUntil from "./components/PremieredUntil";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <HStack>
           <SortOption />
           <RatingOption />
+          <PremieredSince />
+          <PremieredUntil />
         </HStack>
         <MovieGrid />
       </GridItem>
