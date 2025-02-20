@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
 import Sidebar from "./components/Sidebar";
@@ -37,6 +37,13 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <Heading paddingLeft={10} marginTop={2}>
+          {filters
+            ? `${filters.genre} Movies ${
+                filters.language ? "In " + filters.language + " Languages" : ""
+              }`
+            : "Movies"}
+        </Heading>
         <MovieGrid filters={filters} />
       </GridItem>
     </Grid>
