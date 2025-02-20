@@ -15,13 +15,20 @@ export interface Movie {
   name: string;
   image: MoviePoster;
   rating: Rating;
+  genres: string[];
+  language: string;
 }
 
-interface FetchMovieResponse {
-  (): Movie[];
+interface MoviesFilterProps {
+  genre: string;
+  language: string;
+  rating: number;
 }
+// interface FetchMovieResponse {
+//   (): Movie[];
+// }
 
-function useMovies() {
+function useMovies({ genre, language, rating }: MoviesFilterProps) {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -30,11 +37,26 @@ function useMovies() {
     const controller = new AbortController();
     setLoading(true);
     apiClient
-      .get<FetchMovieResponse>("/shows", {
+      .get<Movie[]>("/shows", {
         signal: controller.signal,
       })
       .then((response) => {
-        setMovies(response.data);
+        let filteredMovies: Movie[] = response.data;
+        if (genre)
+          filteredMovies = filteredMovies.filter((movie) =>
+            movie.genres.includes(genre)
+          );
+
+        if (language)
+          filteredMovies = filteredMovies.filter(
+            (movie) => movie.language.toUpperCase() === language.toUpperCase()
+          );
+
+        if (rating)
+          filteredMovies = filteredMovies.filter(
+            (movie) => movie.rating.average >= rating
+          );
+        setMovies(filteredMovies);
         setLoading(false);
       })
       .catch((error) => {
@@ -44,7 +66,7 @@ function useMovies() {
       });
 
     return () => controller.abort();
-  }, []);
+  }, [genre, language, rating]);
   return { movies, error, isLoading };
 }
 

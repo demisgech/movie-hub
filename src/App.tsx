@@ -1,13 +1,22 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
 import Sidebar from "./components/Sidebar";
-import SortOption from "./components/SortOption";
-import RatingOption from "./components/RatingOption";
-import PremieredSince from "./components/PremieredSince";
-import PremieredUntil from "./components/PremieredUntil";
+import { ChangeEvent, useState } from "react";
 
 function App() {
+  const [filters, setFilters] = useState({
+    genre: "",
+    language: "",
+    rating: 0,
+  });
+  const handleSort = (event: ChangeEvent<HTMLSelectElement>) => {
+    setFilters({
+      ...filters,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <Grid
       templateAreas={{
@@ -24,17 +33,11 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="sidebar">
-          <Sidebar />
+          <Sidebar onSelect={handleSort} />
         </GridItem>
       </Show>
       <GridItem area="main">
-        <HStack>
-          <SortOption />
-          <RatingOption />
-          <PremieredSince />
-          <PremieredUntil />
-        </HStack>
-        <MovieGrid />
+        <MovieGrid filters={filters} />
       </GridItem>
     </Grid>
   );

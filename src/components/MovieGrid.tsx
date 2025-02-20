@@ -3,9 +3,18 @@ import MovieCard from "./MovieCard";
 import useMovies from "../hooks/useMovies";
 import MovieCardSkeleton from "./MovieCardSkeleton";
 
-const MovieGrid = () => {
-  const { movies, error, isLoading } = useMovies();
-
+interface Filters {
+  genre: string;
+  language: string;
+  rating: number;
+}
+interface MovieProps {
+  filters: Filters;
+}
+const MovieGrid = ({ filters }: MovieProps) => {
+  const { movies, error, isLoading } = useMovies({
+    ...filters,
+  });
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   if (error) return <Text color="red">{error}</Text>;

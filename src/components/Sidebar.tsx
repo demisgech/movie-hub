@@ -1,19 +1,17 @@
 import { Stack } from "@chakra-ui/react";
-import CountryLIst from "./CountryLIst";
-import GenreList from "./GenreList";
 import LanguagesList from "./LanguageList";
-import NetworkList from "./NetworkList";
-import WebChannel from "./WebChannel";
+import { ChangeEvent } from "react";
+import GenreList from "./GenreList";
+interface Props {
+  onSelect: (event: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-const Sidebar = () => {
+const Sidebar = ({ onSelect }: Props) => {
   return (
     <>
       <Stack paddingX={3} paddingTop={3}>
-        <GenreList />
-        <CountryLIst />
-        <LanguagesList />
-        <NetworkList />
-        <WebChannel />
+        <GenreList onSelect={onSelect} />
+        <LanguagesList onSelect={onSelect} />
       </Stack>
     </>
   );
